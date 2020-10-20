@@ -1,0 +1,164 @@
+// 节点、分流规则或重写规则的配置片段，各类型片段文件可通过引用功能（[server_remote]、[filter_remote]、[rewrite_remote]）使用。文件将保存在 Quantumult X 目录下的 Profiles 子目录中。
+// 片段样例可参见 https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-import-rewrite.txt
+// 使用方式：
+// [rewrite_remote]
+// the-file-you-create.txt, tag=Sample
+
+
+;^http://example.com/resource1/4/ url reject-dict
+
+
+hostname = app.xunjiepdf.com, www.gsstargroup.com, app.rnbdj.com, m.4009991000.com, api.judouapp.com, api.juzikong.com, kaoshi.duoziedu.com, tav.easyfeng.net,kadian.nineton.cn, ygec.fit-time.com, app.xunjiepdf.com, app.xunjiepdf.com, txbdzxviwlx.leanapp.cn, api.calm.com, duoting.tatatimes.com, passport.beva.com, *.dushu.io, api.meiyan.com, api88.awk2.work, *.guoguoapps.com, *.pipiapps.com, *.lagoapps.com, *.*apps.com, *.xiao*.com, api.gotokeep.com,59.110.149.231,129.211.156.213, cm.szsszykj.com, bbs.maibaapp.com, *.xxjjappss.com,*.huaerdadi.com, api.jiaonizuocai.com, nmeditation.snailsleep.net, snailsleep.net,music.snailsleep.net,community.snailsleep.net, api_2496.kuwo.cn, a1008610010.yohui.vip, irecgo.softin-tech.com, baimiao.uzero.cn, api1000.cvxia.com, 
+
+
+
+
+
+
+
+
+# 下面总共🈶️32条重写了
+
+
+# 全家桶会员（by卢本伟-黑黑酱）
+^https://app.xunjiepdf.com/api/v4/virtualactregister url script-response-body qjt.js
+
+# 中医通解锁付费课程—Eric转载注明出处
+https://www.gsstargroup.com/riddles/ios/myhome_new.php url script-response-body Eric/surge/Script/zyt.js
+
+# 菠萝音乐
+^http://app.rnbdj.com/m/user/info url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/boluoMusic.js
+
+# 加密电话
+^https://m.4009991000.com/(userCharge|feeQuery).action url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/jmdh.js
+
+# 句读和句子控解锁VIP—(Alex0510-Eric)
+^https://(api.juzikong|judouapp).com/(api/v9/users/profile|mobi/me/) url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/juzi.js
+
+# 多姿分享是一款考试讲解app解锁vip—
+http://kaoshi.duoziedu.com/mobile/index.php url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/duozifx.js
+
+# 这是两个卡点视频APP解锁VIP
+^htt(ps|p)://(t|k)a(v|dian).(easyfeng|nineton).(net|cn)/api/(v1(|.user))/(info|folk/me) url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/kdsp.js
+
+# 卡点特效视频制作VIP
+^https://api.kadiantexiao.com/api/v1/users/infos url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/kdtx.js
+
+# 瑜伽TV解锁VIP及课程
+^http://ygec.fit-time.com/ftec/getPayMember url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/yjtv.js
+
+# 语音转文字助手VIP
+^https://app.xunjiepdf.com/api/v4/memprofile url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/yzw.js
+
+# 语音翻译器
+^https://app.xunjiepdf.com/api/v4/memprofile url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/yyfyq.js
+
+# 变声器解锁--Mr.Eric
+# 下载https://apps.apple.com/us/app/%E5%8F%98%E9%9F%B3%E5%99%A8-%E5%8F%98%E5%A3%B0%E5%99%A8%E7%94%B7%E5%8F%98%E5%A5%B3/id1508258268
+^https://ytxbdzxviwlx.leanapp.cn/tools/use url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/bsq.js
+
+# caml解锁免费听
+^https://api.calm.com/(me|device|ios/receipt) url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/caml.js
+
+# 英语读书解锁vip--Alex0510(Mr.Eric)
+http://duoting.tatatimes.com/tataeraapi/api.s\?h=QueryVipUser url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/EnglishRead.js
+
+
+
+
+
+# 去朋友圈广告
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(getappmsgext|getappmsgad) url script-response-body https://raw.githubusercontent.com/iepngs/Script/master/weixin/ad.js
+
+# 菜鸟裹裹去广告
+https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.nbnetflow\.guoappstartup\.ads\.show url reject
+
+https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.recommend url reject
+
+https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.show url reject
+
+
+
+
+
+
+# 贝瓦儿歌永久VIP by JungegeCN
+http:\/\/passport\.beva\.com\/passport\/v1\/sdk\/getuserinfo url script-response-body https://raw.githubusercontent.com/JungegeCN/JGG/master/bweg.js
+
+# 樊登读书VIP by JungegeCN
+https:\/\/.*\.dushu\.io\/* url script-request-body https://raw.githubusercontent.com/JungegeCN/JGG/master/pdds.js
+
+# 美颜相机一次性解锁内购（by黑黑酱）
+^https:\/\/api\.meiyan\.com\/iap\/verify\.json url script-response-body https://raw.githubusercontent.com/Sunert/Scripts/master/Script/myxj.js
+
+# 香蕉视频 by JungegeCN
+https?:\/\/.*\.(lagoapps|guoguoapps|pipiapps)\.com\/(ucp\/index|getGlobalData|.+\/reqplay\/|\/comment\/listing\/) url script-response-body https://raw.githubusercontent.com/JungegeCN/JGG/master/xjsp.js
+
+# Keep 解锁私人课程,动作库,解锁运动课程页面会员精讲，解锁会员专属页面会员课程，解锁智能训练(胸背部无跑步无器材84天锻炼)
+
+#注意：此解锁仅针对Keep版本号6.24-6.27的版本。其他版本的未做适配，后续看心情适配。
+#智能计划使用说明：请根据自己的训练时间计划，自行安排时间和结束时间。时间设置请自行在startDate和endDate修改开始结束时间。
+#其他计划更新：其他部位的智能计划也会逐步加入，有兴趣的先关注吧。
+https://api.gotokeep.com/(.+/subject|.+/dynamic|.+/coursePlus/.+|.+/status|.+/tab|.+/my|.+/start|.+/join|.+/complete|.+/detail/.+|.+/preview|.+/auth|.+/tab|.+/days) url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/keep.js
+
+#菜谱大全解锁vip
+https?:\/\/api\.jiaonizuocai\.com url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/cpdq.js
+
+# 小小影视unlock Vip&免广告
+https:\/\/.*\..*\.com\/(ssp-svr\/ssp\/list3|ucp/index) url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/xxys.js
+
+# 大象冥想 解锁VIP&付费音乐
+^https?:\/\/nmeditation\.snailsleep\.net\/meditation-(audio|user|order|audio)\/(api|user)\/(audio\/master\/detail|get\/info|order/user\/vip\/info|ad\/get) url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/dxmx.js
+
+# 蜗牛睡眠 全功能解锁VIP&付费音乐
+^https:\/\/(snailsleep\.net\/|(music|community)\.snailsleep\.net\/)(snail\/v1\/profile\/get|snail-music\/music\/(sleeping|meditation)\/single\/list) url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/wnsm.js
+
+
+
+
+
+# 来自sngxpro……sngxpro……sngxpro
+#2496音乐
+^http?:\/\/api\_\d{4}\.kuwo\.cn\/front\/user\/vipstatus$ url script-response-body https://raw.githubusercontent.com/sngxpro/QuantumultX/master/2496/2496.js
+
+#奥利给直播解锁vip
+^https?:\/\/1008610010\.yohui\.vip\/index\.php\/Api\/LiveApi\/getMovietime url script-response-body https://raw.githubusercontent.com/sngxpro/QuantumultX/master/aoligei/aoligei.js
+
+#录丸解锁vip（appstore下载）
+^https:\/\/irecgo\.softin-tech\.com\/user\/info url script-response-body https://raw.githubusercontent.com/sngxpro/QuantumultX/master/lw/lw.js
+
+#白描解锁黄金vip
+^https?:\/\/baimiao\.uzero\.cn\/api\/v\d\.user\/appLaunchWithUser$ url script-response-body https://raw.githubusercontent.com/sirsunknight/QuantumultX/master/Scripts/Baimiao.js
+
+#黄瓜视频无限观影 + 解锁付费影片
+#黄瓜视频下载地址：http://suo.im/5Fc3Ls
+https:\/\/api1000\.cvxia\.com\/(user\/info|mov\/browse2*) url script-response-body https://raw.githubusercontent.com/sngxpro/scripts/master/hgsp.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
